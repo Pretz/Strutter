@@ -36,9 +36,9 @@
 		FA11F40A1BBF069E00F3C25B /* Strutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA11F40C1BBF069E00F3C25B /* Strutter Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strutter Mac.h"; sourceTree = "<group>"; };
 		FA11F40E1BBF069E00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA11F4131BBF082400F3C25B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		FA11F4151BBF0C0C00F3C25B /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; };
 		FA11F4161BBF290900F3C25B /* Strutter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Strutter.podspec; sourceTree = "<group>"; };
+		FA11F4171BBF2B2700F3C25B /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; };
+		FA11F4181BBF2B3000F3C25B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,9 @@
 		FA11F3DF1BBF05AD00F3C25B = {
 			isa = PBXGroup;
 			children = (
+				FA11F4181BBF2B3000F3C25B /* README.md */,
 				FA11F4161BBF290900F3C25B /* Strutter.podspec */,
+				FA11F4171BBF2B2700F3C25B /* Example.playground */,
 				FA11F3EB1BBF05AD00F3C25B /* Strutter */,
 				FA11F3F71BBF05AD00F3C25B /* StrutterTests */,
 				FA11F40B1BBF069E00F3C25B /* Strutter Mac */,
@@ -94,8 +96,6 @@
 				FA11F3EC1BBF05AD00F3C25B /* Strutter.h */,
 				FA11F3EE1BBF05AD00F3C25B /* Info.plist */,
 				FA11F4031BBF05C000F3C25B /* Strutter.swift */,
-				FA11F4131BBF082400F3C25B /* README.md */,
-				FA11F4151BBF0C0C00F3C25B /* Example.playground */,
 			);
 			path = Strutter;
 			sourceTree = "<group>";
