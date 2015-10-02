@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA11F3ED1BBF05AD00F3C25B /* Strutter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA11F3EC1BBF05AD00F3C25B /* Strutter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA11F3F41BBF05AD00F3C25B /* Strutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11F3E91BBF05AD00F3C25B /* Strutter.framework */; settings = {ASSET_TAGS = (); }; };
+		FA11F3F91BBF05AD00F3C25B /* StrutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */; };
+		FA11F4041BBF05C000F3C25B /* Strutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F4031BBF05C000F3C25B /* Strutter.swift */; settings = {ASSET_TAGS = (); }; };
+		FA11F40D1BBF069E00F3C25B /* Strutter Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = FA11F40C1BBF069E00F3C25B /* Strutter Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA11F4121BBF06A400F3C25B /* Strutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F4031BBF05C000F3C25B /* Strutter.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA11F3F51BBF05AD00F3C25B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA11F3E01BBF05AD00F3C25B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA11F3E81BBF05AD00F3C25B;
+			remoteInfo = Strutter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA11F3E91BBF05AD00F3C25B /* Strutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA11F3EC1BBF05AD00F3C25B /* Strutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strutter.h; sourceTree = "<group>"; };
+		FA11F3EE1BBF05AD00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA11F3F31BBF05AD00F3C25B /* StrutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrutterTests.swift; sourceTree = "<group>"; };
+		FA11F3FA1BBF05AD00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA11F4031BBF05C000F3C25B /* Strutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strutter.swift; sourceTree = "<group>"; };
+		FA11F40A1BBF069E00F3C25B /* Strutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA11F40C1BBF069E00F3C25B /* Strutter Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strutter Mac.h"; sourceTree = "<group>"; };
+		FA11F40E1BBF069E00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA11F4131BBF082400F3C25B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA11F4151BBF0C0C00F3C25B /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; };
+		FA11F4161BBF290900F3C25B /* Strutter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Strutter.podspec; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA11F3E51BBF05AD00F3C25B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F3F01BBF05AD00F3C25B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F3F41BBF05AD00F3C25B /* Strutter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F4061BBF069E00F3C25B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA11F3DF1BBF05AD00F3C25B = {
+			isa = PBXGroup;
+			children = (
+				FA11F4161BBF290900F3C25B /* Strutter.podspec */,
+				FA11F3EB1BBF05AD00F3C25B /* Strutter */,
+				FA11F3F71BBF05AD00F3C25B /* StrutterTests */,
+				FA11F40B1BBF069E00F3C25B /* Strutter Mac */,
+				FA11F3EA1BBF05AD00F3C25B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA11F3EA1BBF05AD00F3C25B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA11F3E91BBF05AD00F3C25B /* Strutter.framework */,
+				FA11F3F31BBF05AD00F3C25B /* StrutterTests.xctest */,
+				FA11F40A1BBF069E00F3C25B /* Strutter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA11F3EB1BBF05AD00F3C25B /* Strutter */ = {
+			isa = PBXGroup;
+			children = (
+				FA11F3EC1BBF05AD00F3C25B /* Strutter.h */,
+				FA11F3EE1BBF05AD00F3C25B /* Info.plist */,
+				FA11F4031BBF05C000F3C25B /* Strutter.swift */,
+				FA11F4131BBF082400F3C25B /* README.md */,
+				FA11F4151BBF0C0C00F3C25B /* Example.playground */,
+			);
+			path = Strutter;
+			sourceTree = "<group>";
+		};
+		FA11F3F71BBF05AD00F3C25B /* StrutterTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */,
+				FA11F3FA1BBF05AD00F3C25B /* Info.plist */,
+			);
+			path = StrutterTests;
+			sourceTree = "<group>";
+		};
+		FA11F40B1BBF069E00F3C25B /* Strutter Mac */ = {
+			isa = PBXGroup;
+			children = (
+				FA11F40C1BBF069E00F3C25B /* Strutter Mac.h */,
+				FA11F40E1BBF069E00F3C25B /* Info.plist */,
+			);
+			path = "Strutter Mac";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FA11F3E61BBF05AD00F3C25B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F3ED1BBF05AD00F3C25B /* Strutter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F4071BBF069E00F3C25B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F40D1BBF069E00F3C25B /* Strutter Mac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FA11F3E81BBF05AD00F3C25B /* Strutter iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA11F3FD1BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "Strutter iOS" */;
+			buildPhases = (
+				FA11F3E41BBF05AD00F3C25B /* Sources */,
+				FA11F3E51BBF05AD00F3C25B /* Frameworks */,
+				FA11F3E61BBF05AD00F3C25B /* Headers */,
+				FA11F3E71BBF05AD00F3C25B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Strutter iOS";
+			productName = Strutter;
+			productReference = FA11F3E91BBF05AD00F3C25B /* Strutter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FA11F3F21BBF05AD00F3C25B /* StrutterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA11F4001BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "StrutterTests" */;
+			buildPhases = (
+				FA11F3EF1BBF05AD00F3C25B /* Sources */,
+				FA11F3F01BBF05AD00F3C25B /* Frameworks */,
+				FA11F3F11BBF05AD00F3C25B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA11F3F61BBF05AD00F3C25B /* PBXTargetDependency */,
+			);
+			name = StrutterTests;
+			productName = StrutterTests;
+			productReference = FA11F3F31BBF05AD00F3C25B /* StrutterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA11F4091BBF069E00F3C25B /* Strutter Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA11F40F1BBF069E00F3C25B /* Build configuration list for PBXNativeTarget "Strutter Mac" */;
+			buildPhases = (
+				FA11F4051BBF069E00F3C25B /* Sources */,
+				FA11F4061BBF069E00F3C25B /* Frameworks */,
+				FA11F4071BBF069E00F3C25B /* Headers */,
+				FA11F4081BBF069E00F3C25B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Strutter Mac";
+			productName = "Strutter Mac";
+			productReference = FA11F40A1BBF069E00F3C25B /* Strutter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA11F3E01BBF05AD00F3C25B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = pretzlav;
+				TargetAttributes = {
+					FA11F3E81BBF05AD00F3C25B = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					FA11F3F21BBF05AD00F3C25B = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					FA11F4091BBF069E00F3C25B = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = FA11F3E31BBF05AD00F3C25B /* Build configuration list for PBXProject "Strutter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA11F3DF1BBF05AD00F3C25B;
+			productRefGroup = FA11F3EA1BBF05AD00F3C25B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA11F3E81BBF05AD00F3C25B /* Strutter iOS */,
+				FA11F3F21BBF05AD00F3C25B /* StrutterTests */,
+				FA11F4091BBF069E00F3C25B /* Strutter Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA11F3E71BBF05AD00F3C25B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F3F11BBF05AD00F3C25B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F4081BBF069E00F3C25B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA11F3E41BBF05AD00F3C25B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F4041BBF05C000F3C25B /* Strutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F3EF1BBF05AD00F3C25B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F3F91BBF05AD00F3C25B /* StrutterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA11F4051BBF069E00F3C25B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11F4121BBF06A400F3C25B /* Strutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA11F3F61BBF05AD00F3C25B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA11F3E81BBF05AD00F3C25B /* Strutter iOS */;
+			targetProxy = FA11F3F51BBF05AD00F3C25B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA11F3FB1BBF05AD00F3C25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA11F3FC1BBF05AD00F3C25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA11F3FE1BBF05AD00F3C25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Strutter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.Strutter;
+				PRODUCT_NAME = Strutter;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA11F3FF1BBF05AD00F3C25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Strutter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.Strutter;
+				PRODUCT_NAME = Strutter;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FA11F4011BBF05AD00F3C25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StrutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.StrutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA11F4021BBF05AD00F3C25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StrutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.StrutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA11F4101BBF069E00F3C25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Strutter Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pretzlav.Strutter-Mac";
+				PRODUCT_NAME = Strutter;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FA11F4111BBF069E00F3C25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Strutter Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pretzlav.Strutter-Mac";
+				PRODUCT_NAME = Strutter;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA11F3E31BBF05AD00F3C25B /* Build configuration list for PBXProject "Strutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA11F3FB1BBF05AD00F3C25B /* Debug */,
+				FA11F3FC1BBF05AD00F3C25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA11F3FD1BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "Strutter iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA11F3FE1BBF05AD00F3C25B /* Debug */,
+				FA11F3FF1BBF05AD00F3C25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA11F4001BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "StrutterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA11F4011BBF05AD00F3C25B /* Debug */,
+				FA11F4021BBF05AD00F3C25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA11F40F1BBF069E00F3C25B /* Build configuration list for PBXNativeTarget "Strutter Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA11F4101BBF069E00F3C25B /* Debug */,
+				FA11F4111BBF069E00F3C25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA11F3E01BBF05AD00F3C25B /* Project object */;
+}
