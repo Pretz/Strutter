@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/Pretz/Strutter"
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
 
   s.author             = { "Alex Pretzlav" => "alex@pretzlav.com" }
   s.social_media_url   = "http://twitter.com/apretz"
