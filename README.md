@@ -1,4 +1,8 @@
 # Strutter
+[![Travis-CI Badge](https://travis-ci.org/Pretz/Strutter.svg?branch=master)](https://travis-ci.org/Pretz/Strutter)
+[![Cocoapods](https://img.shields.io/cocoapods/v/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
+[![License](https://img.shields.io/cocoapods/l/Strutter.svg?style=flat)](https://github.com/Pretz/Strutter/blob/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
 
 `Strutter` is a Swift µFramework for defining AutoLayout constraints with a few custom infix operators. It uses iOS 9 / OS X 10.11's [`NSLayoutAnchor`][anchor] system for defining these constraints. For now it requires iOS 9 or OS X 10.11, but I would like to add conditional support for [`OALayoutAnchor`][oalayoutanchor] in the future, to add support back to iOS 7.
 
