@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA11F4091BBF069E00F3C25B"
-               BuildableName = "Strutter Mac.framework"
+               BuildableName = "Strutter.framework"
                BlueprintName = "Strutter Mac"
                ReferencedContainer = "container:Strutter.xcodeproj">
             </BuildableReference>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FA11F41C1BBF340300F3C25B"
+               BuildableName = "StrutterTests Mac.xctest"
+               BlueprintName = "StrutterTests Mac"
+               ReferencedContainer = "container:Strutter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FA11F4091BBF069E00F3C25B"
+            BuildableName = "Strutter.framework"
+            BlueprintName = "Strutter Mac"
+            ReferencedContainer = "container:Strutter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -46,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA11F4091BBF069E00F3C25B"
-            BuildableName = "Strutter Mac.framework"
+            BuildableName = "Strutter.framework"
             BlueprintName = "Strutter Mac"
             ReferencedContainer = "container:Strutter.xcodeproj">
          </BuildableReference>
@@ -64,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA11F4091BBF069E00F3C25B"
-            BuildableName = "Strutter Mac.framework"
+            BuildableName = "Strutter.framework"
             BlueprintName = "Strutter Mac"
             ReferencedContainer = "container:Strutter.xcodeproj">
          </BuildableReference>
