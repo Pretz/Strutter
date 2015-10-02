@@ -531,7 +531,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StrutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pretzlav.StrutterTests-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -544,7 +544,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StrutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pretzlav.StrutterTests-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -570,6 +570,7 @@
 				FA11F3FF1BBF05AD00F3C25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA11F4001BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "StrutterTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +579,7 @@
 				FA11F4021BBF05AD00F3C25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA11F40F1BBF069E00F3C25B /* Build configuration list for PBXNativeTarget "Strutter Mac" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +588,7 @@
 				FA11F4111BBF069E00F3C25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA11F4251BBF340300F3C25B /* Build configuration list for PBXNativeTarget "StrutterTests Mac" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +597,7 @@
 				FA11F4271BBF340300F3C25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,12 +8,19 @@
 
 import XCTest
 @testable import Strutter
+#if os(iOS)
+    import UIKit
+    typealias ViewClass = UIView
+    #else
+    import Cocoa
+    typealias ViewClass = NSView
+#endif
 
 class StrutterTests: XCTestCase {
 
-    let superview = UIView()
-    let v1 = UIView()
-    let v2 = UIView()
+    let superview = ViewClass()
+    let v1 = ViewClass()
+    let v2 = ViewClass()
 
     override func setUp() {
         super.setUp()
@@ -94,51 +101,86 @@ extension NSLayoutRelation {
     }
 }
 
-extension NSLayoutAttribute {
-    var name: String {
-        switch self {
-        case .Left:
-            return "Left"
-        case .Right:
-            return "Right"
-        case .Top:
-            return "Top"
-        case .Bottom:
-            return "Bottom"
-        case .Leading:
-            return "Leading"
-        case .Trailing:
-            return "Trailing"
-        case .Width:
-            return "Width"
-        case .Height:
-            return "Height"
-        case .CenterX:
-            return "CenterX"
-        case .CenterY:
-            return "CenterY"
-        case .Baseline:
-            return "Baseline"
-        case .FirstBaseline:
-            return "FirstBaseline"
-        case .LeftMargin:
-            return "LeftMargin"
-        case .RightMargin:
-            return "RightMargin"
-        case .TopMargin:
-            return "TopMargin"
-        case .BottomMargin:
-            return "BottomMargin"
-        case .LeadingMargin:
-            return "LeadingMargin"
-        case .TrailingMargin:
-            return "TrailingMargin"
-        case .CenterXWithinMargins:
-            return "CenterXWithinMargins"
-        case .CenterYWithinMargins:
-            return "CenterYWithinMargins"
-        case .NotAnAttribute:
-            return "NotAnAttribute"
+#if os(iOS)
+    extension NSLayoutAttribute {
+        var name: String {
+            switch self {
+            case .Left:
+                return "Left"
+            case .Right:
+                return "Right"
+            case .Top:
+                return "Top"
+            case .Bottom:
+                return "Bottom"
+            case .Leading:
+                return "Leading"
+            case .Trailing:
+                return "Trailing"
+            case .Width:
+                return "Width"
+            case .Height:
+                return "Height"
+            case .CenterX:
+                return "CenterX"
+            case .CenterY:
+                return "CenterY"
+            case .Baseline:
+                return "Baseline"
+            case .FirstBaseline:
+                return "FirstBaseline"
+            case .NotAnAttribute:
+                return "NotAnAttribute"
+            case .LeftMargin:
+                return "LeftMargin"
+            case .RightMargin:
+                return "RightMargin"
+            case .TopMargin:
+                return "TopMargin"
+            case .BottomMargin:
+                return "BottomMargin"
+            case .LeadingMargin:
+                return "LeadingMargin"
+            case .TrailingMargin:
+                return "TrailingMargin"
+            case .CenterXWithinMargins:
+                return "CenterXWithinMargins"
+            case .CenterYWithinMargins:
+                return "CenterYWithinMargins"
+            }
         }
     }
-}
+    #else
+    extension NSLayoutAttribute {
+        var name: String {
+            switch self {
+            case .Left:
+                return "Left"
+            case .Right:
+                return "Right"
+            case .Top:
+                return "Top"
+            case .Bottom:
+                return "Bottom"
+            case .Leading:
+                return "Leading"
+            case .Trailing:
+                return "Trailing"
+            case .Width:
+                return "Width"
+            case .Height:
+                return "Height"
+            case .CenterX:
+                return "CenterX"
+            case .CenterY:
+                return "CenterY"
+            case .Baseline:
+                return "Baseline"
+            case .FirstBaseline:
+                return "FirstBaseline"
+            case .NotAnAttribute:
+                return "NotAnAttribute"
+            }
+        }
+    }
+#endif

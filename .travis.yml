@@ -1,5 +1,15 @@
 language: objective-c
 osx_image: xcode7
 xcode_project: Strutter.xcodeproj
-xcode_scheme: Strutter iOS
-xcode_sdk: iphonesimulator9.0
+xcode_scheme: 
+	- Strutter iOS
+	- Strutter Mac
+xcode_sdk: 
+	- iphonesimulator9.0
+	- macosx10.11
+matrix:
+	exclude:
+		- xcode_scheme: Strutter iOS
+	   		xcode_sdk: macosx10.11
+	   	- xcode_scheme: Strutter Mac
+	   		xcode_sdk: iphonesimulator9.0
