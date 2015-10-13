@@ -14,61 +14,80 @@
     typealias ViewClass = NSView
 #endif
 
+#if OALayout
+    import OALayoutAnchor
+    public typealias LayoutAnchor = OALayoutAnchor
+    public typealias LayoutDimension = OALayoutDimension
+    #else
+    public typealias LayoutAnchor = NSLayoutAnchor
+    public typealias LayoutDimension = NSLayoutDimension
+#endif
+
 infix operator |=| { associativity left precedence 90 }
 infix operator |>=| { associativity left precedence 80 }
 infix operator |<=| { associativity left precedence 80 }
+
+private func activate(constraint: NSLayoutConstraint) {
+#if OALayout
+    constraint.oa_active = true
+    #else
+    if #available(OSX 10.11, iOS 8.0, *) {
+        constraint.active = true
+    }
+#endif
+}
 
 private func install(constraint: NSLayoutConstraint) -> NSLayoutConstraint {
     // Only disable AutoresizineMask on left item, secondItem may need it enabled
     if let v1 = constraint.firstItem as? ViewClass where v1.superview != nil {
         v1.translatesAutoresizingMaskIntoConstraints = false
     }
-    constraint.active = true
+    activate(constraint)
     return constraint
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |=|<T: NSLayoutAnchor>(leftAnchor: T, pair: (NSLayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |=|<T: LayoutAnchor>(leftAnchor: T, pair: (LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToAnchor(pair.0, constant: pair.constant))
 }
 
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |=|<T: NSLayoutAnchor>(leftAnchor: T, rightAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |>=|<T: NSLayoutAnchor>(leftAnchor: T, rightAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |>=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |>=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |>=|<T: NSLayoutAnchor>(leftAnchor: T, pair: (NSLayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |>=|<T: LayoutAnchor>(leftAnchor: T, pair: (LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintGreaterThanOrEqualToAnchor(pair.0, constant: pair.constant))
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |<=|<T: NSLayoutAnchor>(leftAnchor: T, rightAnchor: NSLayoutAnchor) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |<=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |<=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |<=|<T: NSLayoutAnchor>(leftAnchor: T, params: (rightAnchor: NSLayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |<=|<T: LayoutAnchor>(leftAnchor: T, params: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintLessThanOrEqualToAnchor(params.0, constant: params.constant))
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |=|<T: NSLayoutDimension>(leftAnchor: T, constant: CGFloat) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |=|<T: LayoutDimension>(leftAnchor: T, constant: CGFloat) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToConstant(constant))
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |=|<T: NSLayoutDimension>(leftAnchor: T, rest: (NSLayoutDimension, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (LayoutDimension, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToAnchor(rest.0, multiplier: rest.multiplier, constant: rest.constant))
 }
 
-@available(OSX 10.11, iOS 9.0, *)
-public func |=|<T: NSLayoutDimension>(leftAnchor: T, rest: (NSLayoutDimension,  constant: CGFloat)) -> NSLayoutConstraint {
+@available(OSX 10.11, iOS 8.0, *)
+public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (LayoutDimension,  constant: CGFloat)) -> NSLayoutConstraint {
     return leftAnchor |=| (rest.0, 1, rest.constant)
 }

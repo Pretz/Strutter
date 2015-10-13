@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0CF8A8AAF6F7D0B5F03DE13 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B65C1AA595BEFB544C0B4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA11F3ED1BBF05AD00F3C25B /* Strutter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA11F3EC1BBF05AD00F3C25B /* Strutter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA11F3F41BBF05AD00F3C25B /* Strutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11F3E91BBF05AD00F3C25B /* Strutter.framework */; settings = {ASSET_TAGS = (); }; };
 		FA11F3F91BBF05AD00F3C25B /* StrutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE9B65C1AA595BEFB544C0B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE51F186C62CD48DC7856C9C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F9611583F5F11D54F54E92EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FA11F3E91BBF05AD00F3C25B /* Strutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA11F3EC1BBF05AD00F3C25B /* Strutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Strutter.h; sourceTree = "<group>"; };
 		FA11F3EE1BBF05AD00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +46,7 @@
 		FA11F3FA1BBF05AD00F3C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA11F4031BBF05C000F3C25B /* Strutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strutter.swift; sourceTree = "<group>"; };
 		FA11F40A1BBF069E00F3C25B /* Strutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA11F4161BBF290900F3C25B /* Strutter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Strutter.podspec; sourceTree = "<group>"; };
+		FA11F4161BBF290900F3C25B /* Strutter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Strutter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FA11F4171BBF2B2700F3C25B /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; };
 		FA11F4181BBF2B3000F3C25B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA11F41D1BBF340300F3C25B /* StrutterTests Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StrutterTests Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CF8A8AAF6F7D0B5F03DE13 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236D313B760E8DAE2342FD61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B65C1AA595BEFB544C0B4 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3EAE99DA2A2E0F999C3DDE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9611583F5F11D54F54E92EC /* Pods.debug.xcconfig */,
+				DE51F186C62CD48DC7856C9C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA11F3DF1BBF05AD00F3C25B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,8 @@
 				FA11F3EB1BBF05AD00F3C25B /* Strutter */,
 				FA11F3F71BBF05AD00F3C25B /* StrutterTests */,
 				FA11F3EA1BBF05AD00F3C25B /* Products */,
+				B3EAE99DA2A2E0F999C3DDE9 /* Pods */,
+				236D313B760E8DAE2342FD61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,10 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA11F3FD1BBF05AD00F3C25B /* Build configuration list for PBXNativeTarget "Strutter iOS" */;
 			buildPhases = (
+				E2998F950E223CDCDE1BC283 /* Check Pods Manifest.lock */,
 				FA11F3E41BBF05AD00F3C25B /* Sources */,
 				FA11F3E51BBF05AD00F3C25B /* Frameworks */,
 				FA11F3E61BBF05AD00F3C25B /* Headers */,
 				FA11F3E71BBF05AD00F3C25B /* Resources */,
+				A8C5499BA12B8D20E8E5DCDC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +318,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A8C5499BA12B8D20E8E5DCDC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2998F950E223CDCDE1BC283 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA11F3E41BBF05AD00F3C25B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -378,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,6 +491,7 @@
 		};
 		FA11F3FE1BBF05AD00F3C25B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9611583F5F11D54F54E92EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -441,6 +501,7 @@
 				INFOPLIST_FILE = Strutter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D OALayout";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.Strutter;
 				PRODUCT_NAME = Strutter;
 				SKIP_INSTALL = YES;
@@ -450,6 +511,7 @@
 		};
 		FA11F3FF1BBF05AD00F3C25B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE51F186C62CD48DC7856C9C /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -459,6 +521,7 @@
 				INFOPLIST_FILE = Strutter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D OALayout";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pretzlav.Strutter;
 				PRODUCT_NAME = Strutter;
 				SKIP_INSTALL = YES;

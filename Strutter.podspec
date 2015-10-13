@@ -28,4 +28,15 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Pretz/Strutter.git", :tag => s.version }
 
   s.source_files  = "Strutter/*.swift"
+
+  s.subspec 'Core' do |core|
+
+  end
+
+  s.subspec 'OALayoutAnchor' do |compat|
+    compat.platform = :ios, '7.0'
+    compat.ios.deployment_target = '7.0'
+    compat.dependency "OALayoutAnchor"
+    compat.compiler_flags = "-D OALayout"
+  end
 end
