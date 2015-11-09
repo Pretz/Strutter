@@ -2,9 +2,18 @@ PODS:
   - OALayoutAnchor (0.2.0)
 
 DEPENDENCIES:
-  - OALayoutAnchor
+  - OALayoutAnchor (from `git@github.com:Pretz/OALayoutAnchor.git`)
+
+EXTERNAL SOURCES:
+  OALayoutAnchor:
+    :git: git@github.com:Pretz/OALayoutAnchor.git
+
+CHECKOUT OPTIONS:
+  OALayoutAnchor:
+    :commit: 8bc472ef9ddf138641dee2bad2877581b00c2c5a
+    :git: git@github.com:Pretz/OALayoutAnchor.git
 
 SPEC CHECKSUMS:
-  OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
+  OALayoutAnchor: 28eb0bc87484848f3b8df5170c915f4847811398
 
 COCOAPODS: 0.39.0

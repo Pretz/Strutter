@@ -1,5 +1,5 @@
 use_frameworks!
 
 target "Strutter iOS OALayout" do
-    podspec
+    pod "OALayoutAnchor", git: "git@github.com:Pretz/OALayoutAnchor.git"
 end

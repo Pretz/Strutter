@@ -16,7 +16,7 @@ import XCTest
 #endif
 
 #if OALayout
-    @testable import Strutter_OALayout
+    import Strutter_OALayout
     import OALayoutAnchor
     func topAnchor(v: UIView) -> OALayoutAnchor {
         return v.oa_topAnchor
@@ -25,13 +25,13 @@ import XCTest
         return v.oa_heightAnchor
     }
 #else
-    @testable import Strutter
+    import Strutter
     @available(iOS 9.0, *)
-    func topAnchor(v: UIView) -> NSLayoutAnchor {
+    func topAnchor(v: ViewClass) -> NSLayoutAnchor {
         return v.topAnchor
     }
     @available(iOS 9.0, *)
-    func heightAnchor(v: UIView) -> NSLayoutDimension {
+    func heightAnchor(v: ViewClass) -> NSLayoutDimension {
         return v.heightAnchor
     }
 #endif

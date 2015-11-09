@@ -32,9 +32,7 @@ private func activate(constraint: NSLayoutConstraint) {
 #if OALayout
     constraint.oa_active = true
     #else
-    if #available(OSX 10.11, iOS 8.0, *) {
-        constraint.active = true
-    }
+    constraint.active = true
 #endif
 }
 
