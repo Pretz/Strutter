@@ -53,7 +53,7 @@ private func activate(constraint: NSLayoutConstraint) {
  */
 
 
- /**
+/**
  Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute plus a constant offset.
 
  - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
