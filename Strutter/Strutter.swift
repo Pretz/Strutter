@@ -53,14 +53,15 @@ private func activate(constraint: NSLayoutConstraint) {
  */
 
 
-/**
-Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute plus a constant offset.
+ /**
+ Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute plus a constant offset.
 
-- parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
-- parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+ - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+ - parameter constant:   The offset constant for this relationship.
 
-- returns: The new constraint.
-*/
+ - returns: The new constraint.
+ */
 public func |=|(leftAnchor: LayoutAnchor, rest: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToAnchor(rest.rightAnchor, constant: rest.constant))
 }
@@ -93,7 +94,8 @@ public func |>=|(leftAnchor: LayoutAnchor, rightAnchor: LayoutAnchor) -> NSLayou
  Creates and activates a constraint that defines leftAnchor's attribute as greater than or equal to rightAnchor's attribute plus a constant offset.
 
  - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
- - parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+ - parameter constant:  The offset constant for this relationship.
 
  - returns: The new constraint.
  */
@@ -117,7 +119,8 @@ public func |<=|(leftAnchor: LayoutAnchor, rightAnchor: LayoutAnchor) -> NSLayou
  Creates and activates a constraint that defines leftAnchor's attribute as less than or equal to rightAnchor's attribute plus a constant offset.
 
  - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
- - parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+ - parameter constant:  The offset constant for this relationship.
 
  - returns: The new constraint.
  */
@@ -129,7 +132,7 @@ public func |<=|(leftAnchor: LayoutAnchor, rest: (rightAnchor: LayoutAnchor, con
  Creates and activates a constraint that sets a constant size for the attribute associated with a dimension anchor.
 
  - parameter leftDimension:  A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
- - parameter constant:  A constant representing the size of the attribute associated with this dimension anchor.
+ - parameter constant:  A constant representing the size of the attribute associated with the dimension anchor.
 
  - returns: The new constraint.
  */
@@ -141,7 +144,6 @@ public func |=|(leftDimension: LayoutDimension, constant: CGFloat) -> NSLayoutCo
   Creates and activates a constraint that defines a size attribute as equal to another size attribute multiplied by a constant plus an offset.
 
  - parameter leftAnchor: A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
- - parameter rest:       A tuple containing an anchor, multiplier value, and constant value
  - paramater rightAnchor: A dimension anchor of same type from a `UIView`, `NSView`, or `UILayoutGuide` object.
  - parameter multiplier: The multiplier constant for the constraint.
  - parameter constant:   The offset constant for this relationship.
@@ -156,7 +158,6 @@ public func |=|(leftAnchor: LayoutDimension, rest: (rightAnchor: LayoutDimension
  Creates and activates a constraint that defines a size attribute as equal to another size attribute plus a constant offset.
 
  - parameter leftAnchor: A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
- - parameter rest:       A tuple containing an anchor and constant value
  - paramater rightAnchor: A dimension anchor of same type from a `UIView`, `NSView`, or `UILayoutGuide` object.
  - parameter constant:   The offset constant for this relationship.
 
