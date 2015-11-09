@@ -1,2 +1,5 @@
 use_frameworks!
-podspec
+
+target "Strutter iOS OALayout" do
+    podspec
+end

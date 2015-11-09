@@ -14,6 +14,7 @@
     typealias ViewClass = NSView
 #endif
 
+
 #if OALayout
     import OALayoutAnchor
     public typealias LayoutAnchor = OALayoutAnchor
@@ -47,33 +48,33 @@ private func install(constraint: NSLayoutConstraint) -> NSLayoutConstraint {
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutAnchor>(leftAnchor: T, pair: (LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+public func |=|<T: LayoutAnchor>(leftAnchor: T, pair: (T, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToAnchor(pair.0, constant: pair.constant))
 }
 
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
+public func |=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
     return leftAnchor |=| (rightAnchor, constant: 0)
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |>=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
+public func |>=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
     return leftAnchor |>=| (rightAnchor, constant: 0)
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |>=|<T: LayoutAnchor>(leftAnchor: T, pair: (LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+public func |>=|<T: LayoutAnchor>(leftAnchor: T, pair: (T, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintGreaterThanOrEqualToAnchor(pair.0, constant: pair.constant))
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |<=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
+public func |<=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
     return leftAnchor |<=| (rightAnchor, constant: 0)
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |<=|<T: LayoutAnchor>(leftAnchor: T, params: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+public func |<=|<T: LayoutAnchor>(leftAnchor: T, params: (rightAnchor: T, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintLessThanOrEqualToAnchor(params.0, constant: params.constant))
 }
 
@@ -83,11 +84,11 @@ public func |=|<T: LayoutDimension>(leftAnchor: T, constant: CGFloat) -> NSLayou
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (LayoutDimension, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
+public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (T, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
     return install(leftAnchor.constraintEqualToAnchor(rest.0, multiplier: rest.multiplier, constant: rest.constant))
 }
 
 @available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (LayoutDimension,  constant: CGFloat)) -> NSLayoutConstraint {
+public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (T,  constant: CGFloat)) -> NSLayoutConstraint {
     return leftAnchor |=| (rest.0, 1, rest.constant)
 }

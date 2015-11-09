@@ -7,13 +7,33 @@
 //
 
 import XCTest
-@testable import Strutter
 #if os(iOS)
     import UIKit
     typealias ViewClass = UIView
     #else
     import Cocoa
     typealias ViewClass = NSView
+#endif
+
+#if OALayout
+    @testable import Strutter_OALayout
+    import OALayoutAnchor
+    func topAnchor(v: UIView) -> OALayoutAnchor {
+        return v.oa_topAnchor
+    }
+    func heightAnchor(v: UIView) -> OALayoutDimension {
+        return v.oa_heightAnchor
+    }
+#else
+    @testable import Strutter
+    @available(iOS 9.0, *)
+    func topAnchor(v: UIView) -> NSLayoutAnchor {
+        return v.topAnchor
+    }
+    @available(iOS 9.0, *)
+    func heightAnchor(v: UIView) -> NSLayoutDimension {
+        return v.heightAnchor
+    }
 #endif
 
 class StrutterTests: XCTestCase {
@@ -42,49 +62,49 @@ class StrutterTests: XCTestCase {
     }
     
     func testInsideSuperview() {
-        assertEqualConstraints(v1.topAnchor |=| superview.topAnchor,
-            c2: v1.topAnchor.constraintEqualToAnchor(superview.topAnchor))
+        assertEqualConstraints(topAnchor(v1) |=| topAnchor(superview),
+            c2: topAnchor(v1).constraintEqualToAnchor(topAnchor(superview)))
         XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
     }
 
     func testConstant() {
-        assertEqualConstraints(v1.topAnchor |=| (superview.topAnchor, constant: -20),
-            c2: v1.topAnchor.constraintEqualToAnchor(superview.topAnchor, constant: -20))
+        assertEqualConstraints(topAnchor(v1) |=| (topAnchor(superview), constant: -20),
+            c2: topAnchor(v1).constraintEqualToAnchor(topAnchor(superview), constant: -20))
     }
 
     func testLessThan() {
-        assertEqualConstraints(v1.topAnchor |<=| superview.topAnchor,
-            c2: v1.topAnchor.constraintLessThanOrEqualToAnchor(superview.topAnchor))
+        assertEqualConstraints(topAnchor(v1) |<=| topAnchor(superview),
+            c2: topAnchor(v1).constraintLessThanOrEqualToAnchor(topAnchor(superview)))
     }
 
     func testLessThanConstant() {
-        assertEqualConstraints(v1.topAnchor |<=| (superview.topAnchor, -20),
-            c2: v1.topAnchor.constraintLessThanOrEqualToAnchor(superview.topAnchor, constant: -20))
+        assertEqualConstraints(topAnchor(v1) |<=| (topAnchor(superview), -20),
+            c2: topAnchor(v1).constraintLessThanOrEqualToAnchor(topAnchor(superview), constant: -20))
     }
 
     func testGreaterThan() {
-        assertEqualConstraints(v1.topAnchor |>=| superview.topAnchor,
-            c2: v1.topAnchor.constraintGreaterThanOrEqualToAnchor(superview.topAnchor))
+        assertEqualConstraints(topAnchor(v1) |>=| topAnchor(superview),
+            c2: topAnchor(v1).constraintGreaterThanOrEqualToAnchor(topAnchor(superview)))
     }
 
     func testGreaterThanConstant() {
-        assertEqualConstraints(v1.topAnchor |>=| (superview.topAnchor, 20),
-            c2: v1.topAnchor.constraintGreaterThanOrEqualToAnchor(superview.topAnchor, constant: 20))
+        assertEqualConstraints(topAnchor(v1) |>=| (topAnchor(superview), 20),
+            c2: topAnchor(v1).constraintGreaterThanOrEqualToAnchor(topAnchor(superview), constant: 20))
     }
 
     func testFixedValue() {
-        assertEqualConstraints(v1.heightAnchor |=| 200,
-            c2: v1.heightAnchor.constraintEqualToConstant(200))
+        assertEqualConstraints(heightAnchor(v1) |=| 200,
+            c2: heightAnchor(v1).constraintEqualToConstant(200))
     }
 
     func testMultiplierAndConstant() {
-        assertEqualConstraints(v1.heightAnchor |=| (superview.heightAnchor, multiplier: 2, constant: -20),
-            c2: v1.heightAnchor.constraintEqualToAnchor(superview.heightAnchor, multiplier: 2, constant: -20))
+        assertEqualConstraints(heightAnchor(v1) |=| (heightAnchor(superview), multiplier: 2, constant: -20),
+            c2: heightAnchor(v1).constraintEqualToAnchor(heightAnchor(superview), multiplier: 2, constant: -20))
     }
 
     func testDimensionWithConstant() {
-        assertEqualConstraints(v1.heightAnchor |=| (superview.heightAnchor, 20),
-            c2: v1.heightAnchor.constraintEqualToAnchor(superview.heightAnchor, constant: 20))
+        assertEqualConstraints(heightAnchor(v1) |=| (heightAnchor(superview), 20),
+            c2: heightAnchor(v1).constraintEqualToAnchor(heightAnchor(superview), constant: 20))
     }
 }
 
