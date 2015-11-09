@@ -14,7 +14,6 @@
     typealias ViewClass = NSView
 #endif
 
-
 #if OALayout
     import OALayoutAnchor
     public typealias LayoutAnchor = OALayoutAnchor
@@ -28,14 +27,6 @@ infix operator |=| { associativity left precedence 90 }
 infix operator |>=| { associativity left precedence 80 }
 infix operator |<=| { associativity left precedence 80 }
 
-private func activate(constraint: NSLayoutConstraint) {
-#if OALayout
-    constraint.oa_active = true
-    #else
-    constraint.active = true
-#endif
-}
-
 private func install(constraint: NSLayoutConstraint) -> NSLayoutConstraint {
     // Only disable AutoresizineMask on left item, secondItem may need it enabled
     if let v1 = constraint.firstItem as? ViewClass where v1.superview != nil {
@@ -45,48 +36,132 @@ private func install(constraint: NSLayoutConstraint) -> NSLayoutConstraint {
     return constraint
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutAnchor>(leftAnchor: T, pair: (T, constant: CGFloat)) -> NSLayoutConstraint {
-    return install(leftAnchor.constraintEqualToAnchor(pair.0, constant: pair.constant))
+private func activate(constraint: NSLayoutConstraint) {
+    #if OALayout
+        constraint.oa_active = true
+    #else
+        constraint.active = true
+    #endif
 }
 
+/**
+ All Strutter's infix operators create and activate constraints between two `NSLayoutAnchor`s.
+ Strutter additionally sets `translatesAutoresizingMaskIntoConstraints` to `false` for the
+ first item, provided the first item is a view class with a superview. This was chosen
+ as it most closely matches the common case of added a subview, and then constraining it
+ to its parent view. In that case, ensure the subview is always referenced on the left.
+ */
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
+
+/**
+Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute plus a constant offset.
+
+- parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+- parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+
+- returns: The new constraint.
+*/
+public func |=|(leftAnchor: LayoutAnchor, rest: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+    return install(leftAnchor.constraintEqualToAnchor(rest.rightAnchor, constant: rest.constant))
+}
+
+/**
+ Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute.
+
+ - parameter leftAnchor:  A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+
+ - returns: The new constraint.
+ */
+public func |=|(leftAnchor: LayoutAnchor, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |>=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
+/**
+ Creates and activates a constraint that defines leftAnchor's attribute as greater than or equal to rightAnchor's attribute.
+
+ - parameter leftAnchor:  A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+
+ - returns: The new constraint.
+ */
+public func |>=|(leftAnchor: LayoutAnchor, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |>=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |>=|<T: LayoutAnchor>(leftAnchor: T, pair: (T, constant: CGFloat)) -> NSLayoutConstraint {
-    return install(leftAnchor.constraintGreaterThanOrEqualToAnchor(pair.0, constant: pair.constant))
+/**
+ Creates and activates a constraint that defines leftAnchor's attribute as greater than or equal to rightAnchor's attribute plus a constant offset.
+
+ - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+
+ - returns: The new constraint.
+ */
+public func |>=|(leftAnchor: LayoutAnchor, rest: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+    return install(leftAnchor.constraintGreaterThanOrEqualToAnchor(rest.rightAnchor, constant: rest.constant))
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |<=|<T: LayoutAnchor>(leftAnchor: T, rightAnchor: T) -> NSLayoutConstraint {
+/**
+ Creates and activates a constraint that defines leftAnchor's attribute as less than or equal to rightAnchor's attribute.
+
+ - parameter leftAnchor:  A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rightAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object of the same type.
+
+ - returns: The new constraint.
+ */
+public func |<=|(leftAnchor: LayoutAnchor, rightAnchor: LayoutAnchor) -> NSLayoutConstraint {
     return leftAnchor |<=| (rightAnchor, constant: 0)
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |<=|<T: LayoutAnchor>(leftAnchor: T, params: (rightAnchor: T, constant: CGFloat)) -> NSLayoutConstraint {
-    return install(leftAnchor.constraintLessThanOrEqualToAnchor(params.0, constant: params.constant))
+/**
+ Creates and activates a constraint that defines leftAnchor's attribute as less than or equal to rightAnchor's attribute plus a constant offset.
+
+ - parameter leftAnchor: A layout anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter pair:       A tuple containing a layout anchor of compatible type and a constant offset.
+
+ - returns: The new constraint.
+ */
+public func |<=|(leftAnchor: LayoutAnchor, rest: (rightAnchor: LayoutAnchor, constant: CGFloat)) -> NSLayoutConstraint {
+    return install(leftAnchor.constraintLessThanOrEqualToAnchor(rest.rightAnchor, constant: rest.constant))
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutDimension>(leftAnchor: T, constant: CGFloat) -> NSLayoutConstraint {
-    return install(leftAnchor.constraintEqualToConstant(constant))
+/**
+ Creates and activates a constraint that sets a constant size for the attribute associated with a dimension anchor.
+
+ - parameter leftDimension:  A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter constant:  A constant representing the size of the attribute associated with this dimension anchor.
+
+ - returns: The new constraint.
+ */
+public func |=|(leftDimension: LayoutDimension, constant: CGFloat) -> NSLayoutConstraint {
+    return install(leftDimension.constraintEqualToConstant(constant))
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (T, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
-    return install(leftAnchor.constraintEqualToAnchor(rest.0, multiplier: rest.multiplier, constant: rest.constant))
+/**
+  Creates and activates a constraint that defines a size attribute as equal to another size attribute multiplied by a constant plus an offset.
+
+ - parameter leftAnchor: A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rest:       A tuple containing an anchor, multiplier value, and constant value
+ - paramater rightAnchor: A dimension anchor of same type from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter multiplier: The multiplier constant for the constraint.
+ - parameter constant:   The offset constant for this relationship.
+
+ - returns: The new constraint.
+ */
+public func |=|(leftAnchor: LayoutDimension, rest: (rightAnchor: LayoutDimension, multiplier: CGFloat, constant: CGFloat)) -> NSLayoutConstraint {
+    return install(leftAnchor.constraintEqualToAnchor(rest.rightAnchor, multiplier: rest.multiplier, constant: rest.constant))
 }
 
-@available(OSX 10.11, iOS 8.0, *)
-public func |=|<T: LayoutDimension>(leftAnchor: T, rest: (T,  constant: CGFloat)) -> NSLayoutConstraint {
-    return leftAnchor |=| (rest.0, 1, rest.constant)
+/**
+ Creates and activates a constraint that defines a size attribute as equal to another size attribute plus a constant offset.
+
+ - parameter leftAnchor: A dimension anchor from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter rest:       A tuple containing an anchor and constant value
+ - paramater rightAnchor: A dimension anchor of same type from a `UIView`, `NSView`, or `UILayoutGuide` object.
+ - parameter constant:   The offset constant for this relationship.
+
+ - returns: The new constraint.
+ */
+public func |=|(leftAnchor: LayoutDimension, rest: (rightAnchor: LayoutDimension,  constant: CGFloat)) -> NSLayoutConstraint {
+    return leftAnchor |=| (rest.rightAnchor, 1, rest.constant)
 }
