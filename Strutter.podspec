@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Strutter"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "A Swift µFramework for defining AutoLayout constraints"
 
   s.description  = <<-DESC
@@ -30,7 +30,6 @@ Pod::Spec.new do |s|
   s.source_files  = "Strutter/*.swift"
 
   s.subspec 'Core' do |core|
-
   end
 
   s.subspec 'OALayoutAnchor' do |compat|
