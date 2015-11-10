@@ -44,14 +44,7 @@ private func activate(constraint: NSLayoutConstraint) {
     #endif
 }
 
-/**
- All Strutter's infix operators create and activate constraints between two `NSLayoutAnchor`s.
- Strutter additionally sets `translatesAutoresizingMaskIntoConstraints` to `false` for the
- first item, provided the first item is a view class with a superview. This was chosen
- as it most closely matches the common case of added a subview, and then constraining it
- to its parent view. In that case, ensure the subview is always referenced on the left.
- */
-
+// MARK: -
 
 /**
  Creates and activates a constraint that defines leftAnchor's attribute as equal to rightAnchor's attribute plus a constant offset.
