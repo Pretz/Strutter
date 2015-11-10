@@ -46,7 +46,7 @@ Add to your `Cartfile`
 github "Pretz/Strutter"
 ```
 
-Run `carthage` to build the frameworks and drag the built `Strutter.framework` into your Xcode project.
+Run `carthage update` to build the frameworks and drag the built `Strutter.framework` into your Xcode project. The `OALayoutAnchor` variant is not supported with Carthage, as `OALayoutAnchor` does not yet support Carthage.
 
 ### How To
 
