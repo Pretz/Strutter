@@ -3,15 +3,10 @@ osx_image: xcode7.2b1
 xcode_workspace: Strutter.xcworkspace
 env:
   global:
-    # - IOS_SCHEME="Strutter iOS"
-    # - IOS_OA_SCHEME="Strutter iOS OALayout"
-    # - OSX_SCHEME="Strutter Mac"
-    # - IOS_SDK="iphonesimulator"
-    # - OSX_SDK="macosx10.11"
     - "IOS8_32=\"OS=8.4,name=iPhone 4s\""
     - "IOS8_64=\"OS=8.4,name=iPhone 5s\""
-    - "IOS9_32=\"OS=9.1,name=iPhone 4s\""
-    - "IOS9_64=\"OS=9.1,name=iPhone 5s\""
+    - "IOS9_32=\"OS=9.0,name=iPhone 4s\""
+    - "IOS9_64=\"OS=9.0,name=iPhone 5s\""
   matrix:
     - DESTINATION="$IOS8_32"
     - DESTINATION="$IOS8_64"
@@ -30,18 +25,6 @@ matrix:
     - 
       xcode_scheme: "Strutter iOS"
       env: DESTINATION="$IOS8_64"
-#     -
-#       xcode_scheme: Strutter iOS OALayout
-#       xcode_sdk: macosx10.11
-#     - 
-#       xcode_scheme: Strutter Mac
-#       xcode_sdk: iphonesimulator9.0
-#     - 
-#       xcode_scheme: Strutter iOS
-#       env: "DESTINATION=\"OS=8.4,name=iPhone 5s\""
-#     - 
-#       xcode_scheme: Strutter iOS
-#       env: "DESTINATION=\"OS=8.4,name=iPhone 4s\""
   include:
     -
       xcode_scheme: "Strutter Mac"
