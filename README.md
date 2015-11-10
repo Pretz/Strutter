@@ -4,9 +4,47 @@
 [![License](https://img.shields.io/cocoapods/l/Strutter.svg?style=flat)](https://github.com/Pretz/Strutter/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
 
-`Strutter` is a Swift µFramework for defining AutoLayout constraints with a few custom infix operators. It uses iOS 9 / OS X 10.11's [`NSLayoutAnchor`][anchor] system for defining these constraints. For now it requires iOS 9 or OS X 10.11, but I would like to add conditional support for [`OALayoutAnchor`][oalayoutanchor] in the future, to add support back to iOS 7.
+`Strutter` is a Swift µFramework for defining AutoLayout constraints with a few custom infix operators. It uses iOS 9 / OS X 10.11's [`NSLayoutAnchor`][anchor] system for defining these constraints. 
+
+For backwards compatibility, there is a subspec called `OALayoutAnchor` and an alternate framework called `Strutter iOS OALayout` which uses [OALayoutAnchor](https://github.com/oarrabi/OALayoutAnchor) instead of `NSLayoutAnchor`. This version works on iOS 8.
 
 `Strutter` uses the custom operators `|=|`,  `|>=|`, and `|<=|` to define equal, greater than equal, and less than equal constraints between two `NSLayoutAnchors`. The [Apple documentation][anchor] explains the basics of how NSLayoutAnchor works.
+
+`Strutter` automatically activates constraints and disables the `translatesAutoresizingMaskIntoConstraints` attribute of the left-hand view. It doesn't automatically disable both views so positioning subviews of view controllers and navigation bars works as expected.
+
+Since `Strutter` is just syntactic sugar on top of `NSLayoutAnchor`'s methods, it retains the type safety enforced by NSLayoutAnchor which prevents creating invalid constraints, such as between dimension and location metrics.
+
+### Installation
+
+Strutter supports [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage).
+
+#### Cocoapods
+
+Add the following to your Podfile
+```ruby
+platform :ios, '9.0'
+use_frameworks!
+
+pod 'Strutter'
+```
+or, if you're using iOS 8:
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Strutter/OALayoutAnchor'
+```
+
+Then run `pod install`
+
+#### Carthage
+
+Add to your `Cartfile`
+```
+github "Pretz/Strutter"
+```
+
+Run `carthage` to build the frameworks and drag the built `Strutter.framework` into your Xcode project.
 
 ### How To
 
@@ -33,7 +71,7 @@ view1.trailingAnchor.constraintEqualToAnchor(view2.leadingAnchor).active = true
 view1.trailingAnchor |=| view2.leadingAnchor
 ```
 
-`Strutter` automatically activates constraints. The value of a `Strutter` expression is the created constraint, so it can be deactivated after creation if desired:
+The value of a `Strutter` expression is the created constraint, so it can be deactivated after creation if desired:
 ```swift
 let constraint = view1.trailingAnchor |=| view2.leadingAnchor
 constraint.active = false
@@ -91,11 +129,6 @@ is equivalent to
 ```swift
 subv.widthAnchor.constraintEqualToConstant(200)
 ```
-
-`Strutter` automatically disables the `translatesAutoresizingMaskIntoConstraints` attribute of the left-hand view. It doesn't automatically disable both views so positioning subviews of view controllers and navigation bars works as expected.
-
-Since `Strutter` is just syntactic sugar on top of `NSLayoutAnchor`'s methods, it retains the type safety enforced by NSLayoutAnchor which prevents creating invalid constraints, such as between dimension and location metrics.
-
 
 [anchor]: https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html
 [oalayoutanchor]: https://github.com/oarrabi/OALayoutAnchor
