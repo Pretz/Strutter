@@ -16,9 +16,9 @@
 		FA11F4221BBF340300F3C25B /* Strutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11F40A1BBF069E00F3C25B /* Strutter.framework */; };
 		FA11F4281BBF340F00F3C25B /* StrutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */; };
 		FAE23F9B1BED60ED009A63E5 /* StrutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F3F81BBF05AD00F3C25B /* StrutterTests.swift */; };
-		FAE23F9D1BED60ED009A63E5 /* Strutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11F3E91BBF05AD00F3C25B /* Strutter.framework */; };
 		FAE23FA71BED617D009A63E5 /* Strutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11F4031BBF05C000F3C25B /* Strutter.swift */; };
 		FAE23FAB1BED617D009A63E5 /* Strutter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA11F3EC1BBF05AD00F3C25B /* Strutter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAED63091BF17D2F0083FFD6 /* Strutter_OALayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE23FB11BED617D009A63E5 /* Strutter_OALayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE23F9D1BED60ED009A63E5 /* Strutter.framework in Frameworks */,
+				FAED63091BF17D2F0083FFD6 /* Strutter_OALayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
