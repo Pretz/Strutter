@@ -18,7 +18,7 @@ Since `Strutter` is just syntactic sugar on top of `NSLayoutAnchor`'s methods, i
 
 Strutter supports [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage).
 
-#### Cocoapods
+#### CocoaPods
 
 Add the following to your Podfile
 ```ruby
@@ -32,6 +32,8 @@ or, if you're using iOS 8:
 platform :ios, '8.0'
 use_frameworks!
 
+# Temporary, needed for Xcode 7 compatibility
+pod "OALayoutAnchor", git: "https://github.com/Pretz/OALayoutAnchor.git"
 pod 'Strutter/OALayoutAnchor'
 ```
 
@@ -48,7 +50,7 @@ Run `carthage` to build the frameworks and drag the built `Strutter.framework` i
 
 ### How To
 
-In iOS 8 aligning the trailing edge of one view with the leading edge of another was this verbose blob:
+This verbose blob aligns the trailing edge of one view with the leading edge of another on iOS 8:
 
 ```swift
 NSLayoutConstraint(item: view1,
@@ -127,11 +129,15 @@ subv.heightAnchor |=| 200
 ```
 is equivalent to
 ```swift
-subv.widthAnchor.constraintEqualToConstant(200)
+subv.heightAnchor.constraintEqualToConstant(200)
 ```
 
 [anchor]: https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html
 [oalayoutanchor]: https://github.com/oarrabi/OALayoutAnchor
+
+### Playground
+
+Take a look at [the playground](https://github.com/Pretz/Strutter/blob/master/Example.playground/Contents.swift), which demonstrates basic `Strutter` syntax. To use it, open the Strutter.xcworkspace project, build the `Strutter iOS` scheme with a target of an iPhone 5s simulator or newer, and select `Example.playground` in the project navigator.
 
 ### License
 
