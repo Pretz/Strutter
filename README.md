@@ -1,6 +1,6 @@
 # Strutter
 [![Travis-CI Badge](https://travis-ci.org/Pretz/Strutter.svg?branch=master)](https://travis-ci.org/Pretz/Strutter)
-[![Cocoapods](https://img.shields.io/cocoapods/v/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
 [![License](https://img.shields.io/cocoapods/l/Strutter.svg?style=flat)](https://github.com/Pretz/Strutter/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/Strutter.svg?style=flat)](http://cocoapods.org/pods/Strutter)
 
@@ -16,7 +16,7 @@ Since `Strutter` is just syntactic sugar on top of `NSLayoutAnchor`'s methods, i
 
 ### Installation
 
-Strutter supports [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage).
+Strutter supports [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage).
 
 #### CocoaPods
 
